@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+{% for j in jikwondata %}
+	직원명 : {{j.0}}<br>
+	직급 : {{j.1}}<br>
+	부서명 : {{j.2}}<br>
+	부서전화 : {{j.3}}
+{% endfor %}
+</body>
+</html>

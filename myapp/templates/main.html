@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	document.getElementById('btnGogek').onclick = gogekCk;
+}
+
+function gogekCk(){
+	if(regForm.gogekname.value == ""){
+		alert("이름을 입력하세요");
+		regForm.gogekname.focus();
+		return;
+	}
+	
+	if(regForm.gogektel.value == ""){
+		alert("전화번호를 입력하세요");
+		regForm.gogektel.focus();
+		return;
+	}
+	
+	regForm.target='jikfr';
+	regForm.submit();
+}
+</script>
+</head>
+<body> 
+고객정보 입력<br>
+<form action="/gogek/gogekck" method="post" name="regForm">{% csrf_token %}
+	<table>
+		<tr>
+			<td>고객명 : </td>
+			<td>
+				<input type="text" name="gogekname">
+			</td>
+			<td>고객 전화 : </td>
+			<td>
+				<input type="text" name="gogektel">
+				<input type="button" value="확인" id="btnGogek">
+			</td>
+		</tr>
+	</table>
+</form>
+담당직원<br>
+<iframe name="jikfr" src=""></iframe>
+</body>
+</html>
